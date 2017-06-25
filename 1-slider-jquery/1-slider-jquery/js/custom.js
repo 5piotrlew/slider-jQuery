@@ -26,6 +26,20 @@ $(function () {
     });
 
     $('.prev-slide').click(function () {
+        var newSlideIndex = slideIndex - 1;
+        if (newSlideIndex < 0) {
+            return;
+        }
+
+        var marginLeft = (newSlideIndex * (-100)) + '%';
+        console.log(marginLeft);
+
+        slideShow.animate({
+            'margin-left': marginLeft
+        }, 800, function () {
+            slideIndex = newSlideIndex;
+
+        });
 
 
     });
